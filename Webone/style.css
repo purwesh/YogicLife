@@ -280,7 +280,7 @@ body{
 }
 #product1 h2{
     color: #f7b900;
-    font-size: 70px;
+    font-size: 50px;
     transition: 0.5s ease;
     font-weight: bold;
 }
@@ -295,7 +295,7 @@ body{
     flex-wrap:wrap ;
 }
 #product1 .pro{
-    width: 23%;
+    width: 27%;
     min-width: 250px;
     padding: 10px 12px;
     border: 1px solid #cce7d0;
@@ -1496,17 +1496,24 @@ font-size: 14px;
 }
 
 
-.whatsapp-float {
+ /* WhatsApp floating button */
+ .whatsapp-float {
     position: fixed;
-    bottom: 20px; /* Adjust this value to control the vertical position from the bottom */
-    left: 20px; /* Adjust this value to control the horizontal position from the left */
-    z-index: 9999; /* Adjust the z-index to ensure the div is above other elements if necessary */
-    background-color: #ffffff; /* Set the background color if needed */
-    padding: 10px; /* Set padding for the content inside the div */
+    bottom: 50px;
+    right: 50px;
+    background-color: #25d366;
+    color: #fff;
+    padding: 6px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .whatsapp-float img {
+    width: 40px;
   }
   
   .whatsapp-float p {
-    margin: 0; /* Remove default margin for the paragraph */
+    font-size: 12px;
+    margin-top: 5px;
   }
-
- 

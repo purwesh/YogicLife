@@ -1,162 +1,468 @@
-:root {
-    --primary-color: rgb(11, 78, 179);
+   /* Updated styles with new class and ID names */
+
+  /* all */
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cinzel Decorative';
   }
   
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
+  :root {
+    --main-blue: #71b7e6;
+    --main-purple: #9b59b6;
+    --main-grey: #ccc;
+    --sub-grey: #d9d9d9;
   }
   
   body {
-    font-family: Montserrat, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    display: grid;
-    place-items: center;
-    min-height: 100vh;
-    background-color: black;
-   
-  }
-  /* Global Stylings */
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
+    margin: 0; /* Remove default body margin */
+    background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
   }
   
-  input {
-    display: block;
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-    
-  }
-  
-  .width-50 {
-    width: 50%;
-  }
-  
-  .ml-auto {
-    margin-left: auto;
-  }
-  
-  .text-center {
-    text-align: center;
-    color: #fff;
-  }
-  
-  /* Progressbar */
-  .progressbar {
-    position: relative;
+  /* Header section */
+  #header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    counter-reset: step;
-    margin: 2rem 0 4rem;
+    background: #dcdcdcbe;;
+    padding: 10px 30px;
   }
   
-  .progressbar::before,
-  .progress {
+  #header .logo {
+    max-height: 50px;
+  }
+  
+  #header #navbar {
+    list-style: none;
+    display: flex;
+  }
+  
+  #header #navbar li {
+    margin-left: 20px;
+  }
+  
+  #header #navbar li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+  }
+  
+  #header #mobile {
+    display: none;
+  }
+  
+  #header .fa-shopping-bag {
+    font-size: 20px;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    #header #navbar {
+      display: none;
+    }
+  
+    #header #mobile {
+      display: block;
+    }
+  
+    #header #mobile .fa-outdent {
+      font-size: 24px;
+    }
+  
+    #header #mobile .fa-shopping-bag {
+      font-size: 22px;
+    }
+  
+    #header .logo {
+      max-height: 40px;
+    }
+  
+    #header #navbar.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 10px;
+      background: #fff;
+      border-radius: 5px;
+      padding: 10px;
+    }
+  
+    #header #navbar.active li {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+  }
+  
+  /* container and form */
+  .new-container {
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    margin: 20px auto; /* Center the form */
+  }
+  
+  .new-container .new-title {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  .new-container .new-title::before {
     content: "";
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 4px;
-    width: 100%;
-    background-color: #dcdcdc;
-    z-index: -1;
+    height: 3.5px;
+    width: 30px;
+    background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+    left: 0;
+    bottom: 0;
   }
   
-  .progress {
-    background-color: var(--primary-color);
-    width: 0%;
-    transition: 0.3s;
-  }
-  
-  .progress-step {
-    width: 2.1875rem;
-    height: 2.1875rem;
-    background-color: #dcdcdc;
-    border-radius: 50%;
+  .new-container form .new-user__details {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+  }
+  /* inside the form user details */
+  form .new-user__details .new-input__box {
+    width: calc(100% / 2 - 20px);
+    margin-bottom: 15px;
+  }
+  
+  .new-user__details .new-input__box .new-details {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+  }
+  .new-user__details .new-input__box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid var(--main-grey);
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  .new-user__details .new-input__box input:focus,
+  .new-user__details .new-input__box input:valid {
+    border-color: var(--main-purple);
+  }
+  
+  /* inside the form gender details */
+  
+  form .new-gender__details .new-gender__title {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  form .new-gender__details .new-category {
+    display: flex;
+    width: 80%;
+    margin: 15px 0;
+    justify-content: space-between;
+  }
+  
+  .new-gender__details .new-category label {
+    display: flex;
     align-items: center;
   }
   
-  .progress-step::before {
-    counter-increment: step;
-    content: counter(step);
+  .new-gender__details .new-category .new-dot {
+    height: 18px;
+    width: 18px;
+    background: var(--sub-grey);
+    border-radius: 50%;
+    margin: 10px;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
   }
   
-  .progress-step::after {
-    content: attr(data-title);
-    position: absolute;
-    top: calc(100% + 0.5rem);
-    font-size: 0.85rem;
-    color: #ffffff;
+  #new-dot-1:checked ~ .new-category .new-one,
+  #new-dot-2:checked ~ .new-category .new-two,
+  #new-dot-3:checked ~ .new-category .new-three {
+    border-color: var(--sub-grey);
+    background: var(--main-purple);
   }
   
-  .progress-step-active {
-    background-color: var(--primary-color);
-    color: #ffffff;
-  }
-  
-  /* Form */
-  .form {
-    width: clamp(320px, 30%, 430px);
-    margin: 0 auto;
-    border: 2px solid #ccc;
-    border-radius: 0.35rem;
-    padding: 1.5rem;
-}
-  
-  .form-step {
+  form input[type="radio"] {
     display: none;
-    transform-origin: top;
-    animation: animate 0.5s;
   }
   
-  .form-step-active {
-    display: block;
+  /* submit button */
+  form .new-button {
+    height: 45px;
+    margin: 45px 0;
   }
   
-  .input-group {
-    margin: 2rem 0;
+  form .new-button input {
+    height: 100%;
+    width: 100%;
+    outline: none;
     color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+    transition: all 0.3s ease;
   }
   
-  @keyframes animate {
-    from {
-      transform: scale(1, 0);
-      opacity: 0;
+  form .new-button input:hover {
+    background: linear-gradient(-135deg, var(--main-blue), var(--main-purple));
+  }
+  
+  @media only screen and (max-width: 584px) {
+    .new-container {
+      max-width: 100%;
     }
-    to {
-      transform: scale(1, 1);
-      opacity: 1;
+  
+    form .new-user__details .new-input__box {
+      margin-bottom: 15px;
+      width: 100%;
+    }
+  
+    form .new-gender__details .new-category {
+      width: 100%;
+    }
+  
+    .new-container form .new-user__details {
+      max-height: 300px;
+      overflow-y: scroll;
+    }
+  
+    .new-user__details::-webkit-scrollbar {
+      width: 0;
     }
   }
   
-  /* Button */
-  .btns-group {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-  
-  .btn {
-    padding: 0.75rem;
-    display: block;
-    text-decoration: none;
-    background-color: var(--primary-color);
-    color: #f3f3f3;
+  /* Footer section */
+  #footer {
+    background-color: #dcdcdcbe;;
+    padding: 40px 0;
     text-align: center;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    transition: 0.3s;
+    color: #000;
   }
-  .btn:hover {
-    box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+  
+  #footer .footer-img {
+    max-width: 100px;
+    margin-bottom: 20px;
+  }
+  
+  #footer .title-text {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  
+  #footer .footer-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  
+  #footer .footer-left,
+  #footer .footer-right {
+    flex-basis: 48%;
+  }
+  
+  #footer .footer-left h1,
+  #footer .footer-right h1 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+  
+  #footer .footer-left p,
+  #footer .footer-right p {
+    font-size: 16px;
+  }
+  
+  #footer .social-links {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  #footer .social-links a {
+    color: #000;
+    margin-right: 15px;
+  }
+  
+  #footer .footer-links {
+    font-size: 16px;
+  }
+  
+  #footer .footer-links a {
+    color: #000;
+    margin-right: 10px;
+  }
+  
+  /* WhatsApp floating button */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: #25d366;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .whatsapp-float img {
+    width: 40px;
+  }
+  
+  .whatsapp-float p {
+    font-size: 12px;
+    margin-top: 5px;
   }
 
-  .color{
-    color: aqua;
-  }
+
+
+
+
+
+  /* All your existing styles above... */
+
+/* container and form */
+.new-container {
+  max-width: 900px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  margin: 20px auto; /* Center the form */
+  display: flex; /* Added to display the elements side by side */
+}
+
+.new-container .new-title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.new-container .new-title::before {
+  content: "";
+  position: absolute;
+  height: 3.5px;
+  width: 30px;
+  background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+  left: 0;
+  bottom: 0;
+}
+
+.new-container form .new-user__details {
+  flex: 1; /* Added to make the user details take available space */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+.new-user__details .new-input__box {
+  width: calc(100% / 2 - 20px);
+  margin-bottom: 15px;
+}
+
+.new-user__details .new-input__box .new-details {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.new-user__details .new-input__box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--main-grey);
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.new-user__details .new-input__box input:focus,
+.new-user__details .new-input__box input:valid {
+  border-color: var(--main-purple);
+}
+
+/* inside the form gender details */
+form .new-gender__details .new-gender__title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+form .new-gender__details .new-category {
+  display: flex;
+  width: 25%;
+  margin: 15px 0;
+  justify-content: space-between;
+}
+
+.new-gender__details .new-category label {
+  display: flex;
+  align-items: center;
+}
+
+.new-gender__details .new-category .new-dot {
+  height: 18px;
+  width: 18px;
+  background: var(--sub-grey);
+  border-radius: 50%;
+  margin: 10px;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+#new-dot-1:checked ~ .new-category .new-one,
+#new-dot-2:checked ~ .new-category .new-two,
+#new-dot-3:checked ~ .new-category .new-three {
+  border-color: var(--sub-grey);
+  background: var(--main-purple);
+}
+
+form input[type="radio"] {
+  display: none;
+}
+
+/* submit button */
+form .new-button {
+  flex: 1; /* Added to make the button take available space */
+  height: 45px;
+  margin: 45px 0;
+}
+
+form .new-button input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+  transition: all 0.3s ease;
+}
+
+form .new-button input:hover {
+  background: linear-gradient(-135deg, var(--main-blue), var(--main-purple));
+}
+
+/* Existing styles and media queries below... */
+
+/* WhatsApp floating button and Footer section styles... */
+
+
+

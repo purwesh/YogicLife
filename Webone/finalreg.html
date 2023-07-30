@@ -1,240 +1,285 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylereg.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet"/>
+  <script src="https://kit.fontawesome.com/5b80a0f80e.js" crossorigin="anonymous"></script>
+  <title>The Team of Yogic Life</title>
 
-     /* for reg form new */
+  <style>
 
-  /* all */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-:root {
-  --main-blue: #71b7e6;
-  --main-purple: #9b59b6;
-  --main-grey: #ccc;
-  --sub-grey: #d9d9d9;
-}
-
-body {
-  display: flex;
-  height: 100vh;
-  justify-content: center; /*center vertically */
-  align-items: center; /* center horizontally */
-  background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
-  padding: 10px;
-}
-/* container and form */
-.container {
-  max-width: 700px;
-  width: 100%;
-  background: #fff;
-  padding: 25px 30px;
-  border-radius: 5px;
-}
-.container .title {
-  font-size: 25px;
-  font-weight: 500;
-  position: relative;
-}
-
-.container .title::before {
-  content: "";
-  position: absolute;
-  height: 3.5px;
-  width: 30px;
-  background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
-  left: 0;
-  bottom: 0;
-}
-
-.container form .user__details {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 20px 0 12px 0;
-}
-/* inside the form user details */
-form .user__details .input__box {
-  width: calc(100% / 2 - 20px);
-  margin-bottom: 15px;
-}
-
-.user__details .input__box .details {
-  font-weight: 500;
-  margin-bottom: 5px;
-  display: block;
-}
-.user__details .input__box input {
-  height: 45px;
-  width: 100%;
-  outline: none;
-  border-radius: 5px;
-  border: 1px solid var(--main-grey);
-  padding-left: 15px;
-  font-size: 16px;
-  border-bottom-width: 2px;
-  transition: all 0.3s ease;
-}
-
-.user__details .input__box input:focus,
-.user__details .input__box input:valid {
-  border-color: var(--main-purple);
-}
-
-/* inside the form gender details */
-
-form .gender__details .gender__title {
-  font-size: 20px;
-  font-weight: 500;
-}
-
-form .gender__details .category {
-  display: flex;
-  width: 80%;
-  margin: 15px 0;
-  justify-content: space-between;
-}
-
-.gender__details .category label {
-  display: flex;
-  align-items: center;
-}
-
-.gender__details .category .dot {
-  height: 18px;
-  width: 18px;
-  background: var(--sub-grey);
-  border-radius: 50%;
-  margin: 10px;
-  border: 5px solid transparent;
-  transition: all 0.3s ease;
-}
-
-#dot-1:checked ~ .category .one,
-#dot-2:checked ~ .category .two,
-#dot-3:checked ~ .category .three {
-  border-color: var(--sub-grey);
-  background: var(--main-purple);
-}
-
-form input[type="radio"] {
-  display: none;
-}
-
-/* submit button */
-form .button {
-  height: 45px;
-  margin: 45px 0;
-}
-
-form .button input {
-  height: 100%;
-  width: 100%;
-  outline: none;
-  color: #fff;
-  border: none;
-  font-size: 18px;
-  font-weight: 500;
-  border-radius: 5px;
-  background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
-  transition: all 0.3s ease;
-}
-
-form .button input:hover {
-  background: linear-gradient(-135deg, var(--main-blue), var(--main-purple));
-}
-
-@media only screen and (max-width: 584px) {
-  .container {
-    max-width: 100%;
+<style>
+  /* Style for new-container */
+  .new-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  form .user__details .input__box {
+  /* Style for cart-details */
+  .cart-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+  }
+
+  /* Style for the table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
     margin-bottom: 15px;
+  }
+
+  /* Style for table cells (td) */
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  /* Style for the header (h3) */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+
+  /* Style for the product-details */
+  .product-details {
+    margin-top: 20px;
     width: 100%;
   }
 
-  form .gender__details .category {
-    width: 100%;
+  /* Style for the strong elements inside product-details */
+  .product-details strong {
+    width: 150px;
+    display: inline-block;
   }
+</style>
 
-  .container form .user__details {
-    max-height: 300px;
-    overflow-y: scroll;
-  }
-
-  .user__details::-webkit-scrollbar {
-    width: 0;
-  }
-}
-   </style>
-    
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="title">Registration</div>
-        <form action="#">
-          <div class="user__details">
-            <div class="input__box">
-              <span class="details">Full Name</span>
-              <input type="text" placeholder="E.g: John Smith" required>
-            </div>
-            <div class="input__box">
-              <span class="details">City</span>
-              <input type="text" placeholder="johnWC98" required>
-            </div>
-            <div class="input__box">
-              <span class="details">Email</span>
-              <input type="email" placeholder="johnsmith@hotmail.com" required>
-            </div>
-            <div class="input__box">
-              <span class="details">Phone Number</span>
-              <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="012-345-6789" required>
-            </div>
-            <div class="input__box">
-                <span class="details">Full Shipping Address</span>
-                <input type="text" placeholder="E.g: John Smith" required>
-              </div>
-            <div class="input__box">
-              <span class="details">Pin Code</span>
-              <input type="number" placeholder="eg.436633" required>
-            </div>
-      
-          </div>
-          <div class="gender__details">
-            <input type="radio" name="gender" id="dot-1">
-            <input type="radio" name="gender" id="dot-2">
-            <input type="radio" name="gender" id="dot-3">
-            <span class="gender__title">Gender</span>
-            <div class="category">
-              <label for="dot-1">
-                <span class="dot one"></span>
-                <span>Male</span>
-              </label>
-              <label for="dot-2">
-                <span class="dot two"></span>
-                <span>Female</span>
-              </label>
-              <label for="dot-3">
-                <span class="dot three"></span>
-                <span>Prefer not to say</span>
-              </label>
-            </div>
-          </div>
-          <div class="button">
-            <input type="submit" value="Register">
-          </div>
-        </form>
-      </div>
+<section id="header">
+    <a href="#"> <img src="img3/LOGO.png" class="logo" alt=""></a>
 
- 
+    <div>
+        <ul id="navbar">
+            <li><a  href="index.html">Home</a></li>
+            <li><a  href="shop.html">Shop</a></li>
+            <li><a  href="blog.html">Blog</a></li>
+            <li><a  href="about.html">About</a></li>
+            <li><a  class="active" href="contact.html">Business Enquiry</a></li>
+            <li id="lg-bag"><a href="cart.html"><i class="fa fa-shopping-bag" ></i></a></li>
+        </ul>
+    </div>
+    <div id="mobile">
+        <a href="cart.html"><i class="fa fa-shopping-bag" ></i></a>
+        <i  id="bar" class="fa fa-outdent" ></i>
+    </div>
+</section>
+
+<div class="new-container">
+    <div class="cart-details">
+      <div id="subtotal">
+          <h3>Cart Totals</h3>
+          <table>
+              <tr>
+                  <td>Cart Subtotal</td>
+                  <td id="cartSubtotal" style="font-weight: bold;" name="cartSubtotal">Rs. 0/-</td>
+              </tr>
+              <tr>
+                  <td>Shipping</td>
+                  <td id="Shipping" name="Shipping" style="font-weight: bold;" >Free</td>
+              </tr>
+              <tr>
+                  <td><strong>Total</strong></td>
+                  <td id="cartTotal" name="cartTotal" style="font-weight: bold;">Rs. 0/-</td>
+              </tr>
+          </table>
+      </div>
+      
+      <!-- Add the content inside the same cart-details div -->
+      <div class="product-details" id="productDetailsContainer" >
+        <h3>Product Details</h3>
+        <p><strong>Product Name:</strong> <span id="productName" name="productName"></span></p>
+        <p><strong>Product Price:</strong> <span id="productPrice" name="productPrice"></span></p>
+        <p><strong>Product Quantity:</strong> <span id="productQuantity" name="productQuantitys"></span></p>
+        <p><strong>Product Subtotal:</strong> <span id="productSubtotal" name="productSubtotal"></span></p>
+      </div>
+    </div>
+  </div>
+  
+
+
+<div class="new-container">
+  <div class="registration-form">
+      <div class="new-title">Place Your Order Now</div>
+      <form action="" name="submit-to-google-sheet" id="order-form">
+        <div class="new-user__details">
+              <div class="new-input__box">
+                  <span class="new-details">First Name</span>
+                  <input type="text" name="first_name" placeholder="E.g: John Smith" required>
+              </div>
+              <div class="new-input__box">
+                  <span class="new-details">Last Name</span>
+                  <input type="text" name="last_name" placeholder="johnWC98" required>
+              </div>
+              <div class="new-input__box">
+                  <span class="new-details">Email</span>
+                  <input type="email" name="email" placeholder="johnsmith@hotmail.com" required>
+              </div>
+              <div class="new-input__box">
+                  <span class="new-details">Phone Number</span>
+                  <input type="tel" name="phone_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="012-345-6789" required>
+              </div>
+              <div class="new-input__box">
+                  <span class="new-details">Full Shipping Address</span>
+                  <input type="text" name="shipping_address" placeholder="E.g: Chowk Road Pune" required>
+              </div>
+              <div class="new-input__box">
+                  <span class="new-details">Pin Code</span>
+                  <input type="number" name="pin_code" placeholder="eg.436633" required>
+              </div>
+              <div class="new-input__box">
+                <span class="new-details">City</span>
+                <input type="text" name="city" placeholder="E.g: Pune" required>
+            </div>
+            <div class="new-input__box">
+                <span class="new-details">State</span>
+                <input type="text" name="state" placeholder="E.g: Maharashtra" required>
+            </div>
+          </div>
+          <div class="new-gender__details">
+              <input type="radio" name="new-gender" id="new-dot-1">
+              <input type="radio" name="new-gender" id="new-dot-2">
+              <span class="new-gender__title">Gender</span>
+              <div class="new-category">
+                  <label for="new-dot-1">
+                      <span class="new-dot new-one"></span>
+                      <span>Male</span>
+                  </label>
+                  <label for="new-dot-2">
+                      <span class="new-dot new-two"></span>
+                      <span>Female</span>
+                  </label>
+                  
+              </div>
+              <div>
+                <Label><strong>Note: Only Cash On Delievery Available</strong></Label><br>
+                <label><strong>You Will Recieve Your Order Within 15 Working Days </strong></label>
+              </div>
+          </div>
+          <!-- No Proceed to Checkout button -->
+          <div class="new-button">
+              <input type="submit" value="Place Your Order">
+          </div>
+      </form>
+  </div>
+
+</div>
+
+
+
+
+</div>
+<section id="footer">
+    <img src="img/honey.png" class="footer-img" alt="">
+    <div class="title-text">
+        <p>Contact</p>
+        <h1>Visit Shop Today</h1>
+    </div>
+
+    <div class="footer-row">
+        <div class="footer-left">
+            <h1>Opening Hours</h1>
+            <p><i class="fa fa-clock"></i>Monday to Friday - 9am to 9pm</p>
+            <p><i class="fa fa-clock"></i>Saturday and Sunday - 8am to 11pm</p>
+        </div>
+        <div class="footer-right">
+            <h1>Get In Touch</h1>
+            <p>Suryawanshi House, Kotari Naka, Amravati <i class="fa fa-map-marker"></i></p>
+            <p>teamyogiclife@gmail.com <i class="fa fa-paper-plane"></i></p>
+            <p>Contact Us: +91 91111 12345 <i class="fa fa-phone"></i></p>
+        </div>
+    </div>
+
+    <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=100089304695448&mibextid=ZbWKwL" target="_blank"><i
+                class="fa fa-facebook"></i></a>
+        <a href="https://instagram.com/my_yogiclife?igshid=MzNlNGNkZWQ4Mg==" target="_blank"><i
+                class="fa fa-instagram"></i></a>
+        <a href="https://twitter.com/teamyogiclife?t=nmpG7DU6HTXMa515gvLpkg&s=09" target="_blank"><i
+                class="fa fa-twitter"></i></a>
+        <a href="https://youtube.com/@YogicLife108" target="_blank"><i class="fa fa-youtube"></i></a>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="privacypolicy.html" style="color: black;">Privacy Policy</a>
+        <a href="Refundpolicy.html" style="color: black;">Refund Policy</a>
+    </div>
+
+    <div class="whatsapp-float" style="margin-left: 90%;">
+        <a href="https://wa.me/917498903974" target="_blank"> <img
+                src="https://tse3.mm.bing.net/th?id=OIP.Wwr46uH0TJDPV-3wlsn51QHaHa&pid=Api&P=0&h=180" width="50px"
+                class="whatsapp_float_btn" /></a>
+        <p>Lets Have A Chat </p>
+    </div>
+</section>
+
+<script>
+     var cartSubtotal = localStorage.getItem("cartSubtotal");
+    var cartTotal = localStorage.getItem("cartTotal");
+
+    if (cartSubtotal && cartTotal) {
+        document.getElementById("cartSubtotal").innerText = cartSubtotal;
+        document.getElementById("cartTotal").innerText = cartTotal;
+    }
+    
+    // Function to display all product data from cart items
+    function displayProductData() {
+        var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        var productDetailsContainer = document.getElementById("productDetailsContainer");
+        productDetailsContainer.innerHTML = ""; // Clear existing content
+
+        if (cartItems.length > 0) {
+            cartItems.forEach(function (item) {
+                var productDetailsDiv = document.createElement("div");
+                productDetailsDiv.className = "product-details";
+                productDetailsDiv.innerHTML = `
+                    <h3>Product Details</h3>
+                    <p><strong>Product Name:</strong> ${item.productName}</p>
+                    <p><strong>Product Price:</strong> Rs. ${item.price}/-</p>
+                    <p><strong>Product Quantity:</strong> ${item.quantity}</p>
+                    <p><strong>Product Subtotal:</strong> Rs. ${item.subtotal}/-</p>
+                `;
+                productDetailsContainer.appendChild(productDetailsDiv);
+            });
+        } else {
+            // Cart is empty, show a message
+            productDetailsContainer.innerHTML = "<p>No products in the cart.</p>";
+        }
+    }
+
+    // Run the function to display product data on page load
+    window.onload = function () {
+        displayProductData();
+    };
+</script>
+
 </body>
 </html>

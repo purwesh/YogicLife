@@ -1,101 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-   
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/5b80a0f80e.js" crossorigin="anonymous"></script>
     <title>The Team of Yogic Life</title>
 </head>
+
 <body>
-        <section id="header">
-            <a href="#"> <img src="img3/LOGO.png" class="logo" alt=""></a>
+    <section id="header">
+        <a href="#"> <img src="img3/LOGO.png" class="logo" alt=""></a>
 
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Business Enquiry</a></li>
+                <li id="lg-bag"><a class="active" href="cart.html"><i class="fa fa-shopping-bag"></i></a></li>
+                <a href="#" id="close"><i class="fa fa-times"></i></a>
+
+
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fa fa-shopping-bag"></i></a>
+            <i id="bar" class="fa fa-outdent"></i>
+
+        </div>
+    </section>
+
+    <section id="page-header" class="about-header">
+
+        <h2>#let's_talk</h2>
+
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+
+    </section>
+
+    <section id="cart" class="section-p1">
+        <table width="100%">
+            <thead>
+                <tr>
+                    <td>Remove</td>
+                    <td>Image</td>
+                    <td>Product</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Subtotal</td>
+                </tr>
+            </thead>
+            <tbody id="cartBody">
+
+            </tbody>
+        </table>
+    </section>
+
+    <section id="cart-add" class="section-p1">
+        <div id="coupon">
+            <h3>Apply Coupon</h3>
             <div>
-                <ul id="navbar">
-                    <li><a  href="index.html">Home</a></li>
-                    <li><a  href="shop.html">Shop</a></li>
-                    <li><a  href="blog.html">Blog</a></li>
-                     <li><a  href="about.html">About</a></li>
-                     <li><a  href="contact.html">Contact</a></li>
-                    <li id="lg-bag"><a class="active"  href="cart.html"><i class="fa fa-shopping-bag" ></i></a></li>
-                    <a href="#" id="close"><i class="fa fa-times"></i></a>
-
-
-                </ul>
+                <input type="text" placeholder="Enter Your Coupon">
+                <button class="normal">Apply</button>
             </div>
-            <div id="mobile">
-                <a href="cart.html"><i class="fa fa-shopping-bag" ></i></a>
-                <i  id="bar" class="fa fa-outdent" ></i>
-                
-            </div>
-        </section>
+        </div>
 
-        <section id="page-header" class="about-header">
-            
-            <h2>#let's_tak</h2>
-            
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-           
-        </section>        
+        <div id="subtotal">
+            <h3>Cart Totals</h3>
+            <table>
+                <tr>
+                    <td>Cart Subtotal</td>
+                    <td id="cartSubtotal" style="font-weight: bold;">Rs. 0/-</td>
+                </tr>
+                <tr>
+                    <td>Shipping</td>
+                    <td style="font-weight: bold;">Free</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td id="cartTotal" style="font-weight: bold;">Rs. 0/-</td>
+                </tr>
+            </table>
+            <a href="finalreg.html" onclick="saveCartData()">
+                <button id="checkoutButton" class="normal">Proceed To Checkout</button>
+            </a>
+        </div>
 
-        <section id="cart" class="section-p1">
-                <table width="100%">
-                    <thead>
-                        <tr>
-                                <td>Remove</td>
-                                <td>Image</td>
-                                <td>Product</td>
-                                <td>Price</td>
-                                <td>Quantity</td>
-                                <td>Subtotal</td>
-                        </tr>
-                    </thead>
-                        <tbody id="cartBody">
-                            
-                        </tbody>
-                </table>
-        </section>
+    </section>
 
-        <section id="cart-add" class="section-p1">
-            <div id="coupon">
-                <h3>Apply Coupon</h3>
-                <div>
-                    <input type="text" placeholder="Enter Your Coupon">
-                    <button class="normal">Apply</button>
-                </div>
-            </div>
 
-            <div id="subtotal">
-                <h3>Cart Totals</h3>
-                <table>
-                    <tr>
-                        <td>Cart Subtotal</td>
-                        <td id="cartSubtotal" style="font-weight: bold;">Rs. 0/-</td>
-                    </tr>
-                    <tr>
-                        <td>Shipping</td>
-                        <td style="font-weight: bold;">Free</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Total</strong></td>
-                        <td id="cartTotal" style="font-weight: bold;">Rs. 0/-</td>
-                    </tr>
-                </table>
-                <a href="RegistrationForm.html">  <button class="normal">Procced To Checkout</button></a>
-            </div>
-            
-        </section>
-       
-       
-        <!-- Footer section  -->
-        <!-- <footer class="section-p1">
+    <!-- Footer section  -->
+    <!-- <footer class="section-p1">
             <div class="col">
                 <img src="img/5.png" class=" logo" alt="">
                 <h4>Contact</h4>
@@ -152,162 +156,166 @@
         </footer> -->
 
 
-        <section id="footer">
-            <img src="img/honey.png" class="footer-img" alt="">
-            <div class="title-text">
-                  <p>Contact</p>
-                  <h1>Visit Shop Today</h1>
-             </div>
-        
-             <div class="footer-row">
-                  <div class="footer-left">
-                        <h1>Opening Hours</h1>
-                        <p> <i class="fa fa-clock"></i>Monday to Friday - 9am to 9pm</p>
-                        <p> <i class="fa fa-clock"></i>Saturday and Sunday - 8am to 11pm</p>
-        
-                  </div>
-                  <div class="footer-right">
-                        <h1>Get In Touch</h1>
-                        <p>Suryawanshi House, Kotari Naka, Amravati <i class="fa fa-map-marker"></i></p>
-                        <p>teamyogiclife@gmail.com <i class="fa fa-paper-plane"></i></p>
-                        <p>Contact Us : +91 91111 12345 <i class="fa fa-phone"></i></p>
-                  </div>
-             </div>
-        
-                  <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=100089304695448&mibextid=ZbWKwL" target="_blank"><i class="fa fa-facebook"></i></a>
-                    <a href="https://instagram.com/my_yogiclife?igshid=MzNlNGNkZWQ4Mg==" target="_blank"><i class="fa fa-instagram"></i></a>
-                    <a href="https://twitter.com/teamyogiclife?t=nmpG7DU6HTXMa515gvLpkg&s=09" target="_blank"><i class="fa fa-twitter"></i></a>
-                    <a href="https://youtube.com/@YogicLife108" target="_blank"><i class="fa fa-youtube"></i></a>
-                        
-                  </div>
+    <section id="footer">
+        <img src="img/honey.png" class="footer-img" alt="">
+        <div class="title-text">
+            <p>Contact</p>
+            <h1>Visit Shop Today</h1>
+        </div>
+
+        <div class="footer-row">
+            <div class="footer-left">
+                <h1>Opening Hours</h1>
+                <p> <i class="fa fa-clock"></i>Monday to Friday - 9am to 9pm</p>
+                <p> <i class="fa fa-clock"></i>Saturday and Sunday - 8am to 11pm</p>
+
+            </div>
+            <div class="footer-right">
+                <h1>Get In Touch</h1>
+                <p>Suryawanshi House, Kotari Naka, Amravati <i class="fa fa-map-marker"></i></p>
+                <p>teamyogiclife@gmail.com <i class="fa fa-paper-plane"></i></p>
+                <p>Contact Us : +91 91111 12345 <i class="fa fa-phone"></i></p>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=100089304695448&mibextid=ZbWKwL" target="_blank"><i
+                    class="fa fa-facebook"></i></a>
+            <a href="https://instagram.com/my_yogiclife?igshid=MzNlNGNkZWQ4Mg==" target="_blank"><i
+                    class="fa fa-instagram"></i></a>
+            <a href="https://twitter.com/teamyogiclife?t=nmpG7DU6HTXMa515gvLpkg&s=09" target="_blank"><i
+                    class="fa fa-twitter"></i></a>
+            <a href="https://youtube.com/@YogicLife108" target="_blank"><i class="fa fa-youtube"></i></a>
+
+        </div>
 
 
-                  <div style="text-align: center;">
-                    <a href="privacypolicy.html" style="color: black;">Privacy Policy</a>
-                    <a href="Refundpolicy.html" style="color: black;">Refunf Policy</a>
-                </div>
+        <div style="text-align: center;">
+            <a href="privacypolicy.html" style="color: black;">Privacy Policy</a>
+            <a href="Refundpolicy.html" style="color: black;">Refunf Policy</a>
+        </div>
 
-                  <div class="whatsapp-float" style="margin-left: 90%;">
-                    <a href="https://wa.me/917498903974" target="_blank"> <img src="https://tse3.mm.bing.net/th?id=OIP.Wwr46uH0TJDPV-3wlsn51QHaHa&pid=Api&P=0&h=180"
-                      width ="50px" class="whatsapp_float_btn"/></a>
-                      <p>Lets Have A Chat </p>
-  
-                 </div>
+        <div class="whatsapp-float" style="margin-left: 90%;">
+            <a href="https://wa.me/917498903974" target="_blank"> <img
+                    src="https://tse3.mm.bing.net/th?id=OIP.Wwr46uH0TJDPV-3wlsn51QHaHa&pid=Api&P=0&h=180" width="50px"
+                    class="whatsapp_float_btn" /></a>
+            <p>Lets Have A Chat </p>
 
-                  </section>
-                     
-                     
-                
+        </div>
+
+    </section>
 
 
-            <script src="script.js">   </script>
-
-            <script>
-                // Function to update the cart subtotal and total
-                function updateCartTotals() {
-                    var cartSubtotal = 0;
-            
-                    // Get all the rows in the cart table
-                    var cartRows = document.querySelectorAll("#cartBody tr");
-            
-                    // Calculate the cart subtotal based on each row's subtotal
-                    cartRows.forEach(function (row) {
-                        var subtotalCell = row.querySelector(".subtotal");
-                        var subtotal = parseInt(subtotalCell.innerText);
-                        cartSubtotal += subtotal;
-                    });
-            
-                    // Update the cart subtotal and total elements
-                    var cartSubtotalElement = document.getElementById("cartSubtotal");
-                    var cartTotalElement = document.getElementById("cartTotal");
-                    cartSubtotalElement.innerText = "Rs. " + cartSubtotal + "/-";
-                    cartTotalElement.innerText = "Rs. " + cartSubtotal + "/-";
-                }
-            
-                // Function to update the subtotal based on the selected quantity
-                function updateSubtotal(inputElement) {
-                    var row = inputElement.parentNode.parentNode;
-                    var priceCell = row.querySelector(".price");
-                    var subtotalCell = row.querySelector(".subtotal");
-                    var price = parseInt(priceCell.innerText);
-                    var quantity = parseInt(inputElement.value);
-                    var subtotal = price * quantity;
-                    subtotalCell.innerText = subtotal;
-            
-                    // Update the cart totals
-                    updateCartTotals();
-            
-                    // Update the cart items in localStorage
-                    updateLocalStorage();
-                }
-            
-               // Function to remove a row from the cart
-                function removeRow(deleteIcon, event) {
-                    var row = deleteIcon.closest("tr");
-                    row.remove();
-
-                    // Update the cart totals
-                    updateCartTotals();
-
-                    // Update the cart items in localStorage
-                    updateLocalStorage();
-
-                    // Prevent the event from bubbling up (optional)
-                    event.stopPropagation();
-                }
-            
-                // Function to update cart items in localStorage
-                function updateLocalStorage() {
-                    var cartRows = document.querySelectorAll("#cartBody tr");
-                    var cartItems = [];
-            
-                    cartRows.forEach(function (row) {
-                        var productName = row.querySelector("td:nth-child(3)").innerText;
-                        var price = parseInt(row.querySelector(".price").innerText);
-                        var quantity = parseInt(row.querySelector("input").value);
-                        var subtotal = price * quantity;
-            
-                        cartItems.push({
-                            productName: productName,
-                            price: price,
-                            quantity: quantity,
-                            subtotal: subtotal,
-                        });
-                    });
-            
-                    localStorage.setItem("cartItems", JSON.stringify(cartItems));
-                }
-
-                 // Function to clear the cart items in localStorage for new users
-                    function clearCartItems() {
-                        localStorage.removeItem("cartItems");
-                    }
-
-                    // Function to check if cart items are available in localStorage
-                    function isCartEmpty() {
-                        var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-                        return cartItems.length === 0;
-                    }
-              
-                // Load cart items from localStorage on page load
-                function loadCartItems() {
-
-                    if (isCartEmpty()) {
-                        // Call the function to clear cart items
-                        clearCartItems();
-                    }
 
 
-                    var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-                    var cartBody = document.getElementById("cartBody");
 
-                    // Clear the existing cart rows
-                    cartBody.innerHTML = "";
-            
-                    cartItems.forEach(function (item) {
-                        var newRow = document.createElement("tr");
-                        newRow.innerHTML = `
+    <script src="script.js">   </script>
+
+    <script>
+        // Function to update the cart subtotal and total
+        function updateCartTotals() {
+            var cartSubtotal = 0;
+
+            // Get all the rows in the cart table
+            var cartRows = document.querySelectorAll("#cartBody tr");
+
+            // Calculate the cart subtotal based on each row's subtotal
+            cartRows.forEach(function (row) {
+                var subtotalCell = row.querySelector(".subtotal");
+                var subtotal = parseInt(subtotalCell.innerText);
+                cartSubtotal += subtotal;
+            });
+
+            // Update the cart subtotal and total elements
+            var cartSubtotalElement = document.getElementById("cartSubtotal");
+            var cartTotalElement = document.getElementById("cartTotal");
+            cartSubtotalElement.innerText = "Rs. " + cartSubtotal + "/-";
+            cartTotalElement.innerText = "Rs. " + cartSubtotal + "/-";
+        }
+
+        // Function to update the subtotal based on the selected quantity
+        function updateSubtotal(inputElement) {
+            var row = inputElement.parentNode.parentNode;
+            var priceCell = row.querySelector(".price");
+            var subtotalCell = row.querySelector(".subtotal");
+            var price = parseInt(priceCell.innerText);
+            var quantity = parseInt(inputElement.value);
+            var subtotal = price * quantity;
+            subtotalCell.innerText = subtotal;
+
+            // Update the cart totals
+            updateCartTotals();
+
+            // Update the cart items in localStorage
+            updateLocalStorage();
+        }
+
+        // Function to remove a row from the cart
+        function removeRow(deleteIcon, event) {
+            var row = deleteIcon.closest("tr");
+            row.remove();
+
+            // Update the cart totals
+            updateCartTotals();
+
+            // Update the cart items in localStorage
+            updateLocalStorage();
+
+            // Prevent the event from bubbling up (optional)
+            event.stopPropagation();
+        }
+
+        // Function to update cart items in localStorage
+        function updateLocalStorage() {
+            var cartRows = document.querySelectorAll("#cartBody tr");
+            var cartItems = [];
+
+            cartRows.forEach(function (row) {
+                var productName = row.querySelector("td:nth-child(3)").innerText;
+                var price = parseInt(row.querySelector(".price").innerText);
+                var quantity = parseInt(row.querySelector("input").value);
+                var subtotal = price * quantity;
+
+                cartItems.push({
+                    productName: productName,
+                    price: price,
+                    quantity: quantity,
+                    subtotal: subtotal,
+                });
+            });
+
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        }
+
+        // Function to clear the cart items in localStorage for new users
+        function clearCartItems() {
+            localStorage.removeItem("cartItems");
+        }
+
+        // Function to check if cart items are available in localStorage
+        function isCartEmpty() {
+            var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            return cartItems.length === 0;
+        }
+
+        // Load cart items from localStorage on page load
+        function loadCartItems() {
+
+            if (isCartEmpty()) {
+                // Call the function to clear cart items
+                clearCartItems();
+            }
+
+
+            var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            var cartBody = document.getElementById("cartBody");
+
+            // Clear the existing cart rows
+            cartBody.innerHTML = "";
+
+            cartItems.forEach(function (item) {
+                var newRow = document.createElement("tr");
+                newRow.innerHTML = `
                         <td><a href="#"><i class="fa fa-trash" onclick="removeRow(this, event)"></i></a></td>
                             <td><img src="${item.imageSrc}" alt=""></td>
                             <td>${item.productName}</td>
@@ -315,19 +323,68 @@
                             <td><input type="number" value="${item.quantity}" min="1" onchange="updateSubtotal(this)"></td>
                             <td class="subtotal">${item.subtotal}</td>
                         `;
-                        cartBody.appendChild(newRow);
-                    });
-            
-                    // Update the cart totals initially
-                    updateCartTotals();
-                }
-            
-                // Run the function to load cart items on page load
-                window.onload = function () {
-                    loadCartItems();
-                };
-            </script>
-            
-            
+                cartBody.appendChild(newRow);
+            });
+
+            // Update the cart totals initially
+            updateCartTotals();
+
+
+
+        }
+
+        // Run the function to load cart items on page load
+        window.onload = function () {
+            loadCartItems();
+        };
+
+
+
+
+
+
+
+
+
+        function saveCartData() {
+            // Get the cart data
+            var cartSubtotal = document.getElementById("cartSubtotal").innerText;
+            var cartTotal = document.getElementById("cartTotal").innerText;
+
+            // Store the cart data in local storage
+            localStorage.setItem("cartSubtotal", cartSubtotal);
+            localStorage.setItem("cartTotal", cartTotal);
+        }
+
+
+
+
+
+        const cartTotalElement = document.getElementById("cartTotal");
+        const checkoutButton = document.getElementById("checkoutButton");
+
+        // Function to check if the cart total is zero
+        function isCartTotalZero() {
+            const cartTotal = parseInt(cartTotalElement.innerText.match(/\d+/)[0], 10);
+            return cartTotal === 0;
+        }
+
+        // Function to show the message and disable the button
+        function handleCheckout() {
+            if (isCartTotalZero()) {
+                alert("Please add items to your cart.");
+                return false; // Prevent proceeding to checkout
+            }
+            // Save cart data and proceed to checkout
+            saveCartData();
+        }
+
+        // Attach the function to the button's onclick event
+        checkoutButton.onclick = handleCheckout;
+
+    </script>
+
+
 </body>
+
 </html>
