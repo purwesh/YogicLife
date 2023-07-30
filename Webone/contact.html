@@ -80,7 +80,7 @@
     </section>
 
     <section id="form-details">
-        <form>
+        <form name="submit-to-google-sheet">
             <span>LEAVE A MESSAGE</span>
             <h2>We Love to hear from you</h2>
             <input type="text" name="Name" id="Name" placeholder="Your Name" required>
@@ -88,12 +88,13 @@
             <input type="text" name="subject" id="Subject" placeholder="Subject" required>
             <textarea name="test" id="Message" cols="30" rows="10" placeholder="Your MESSAGE" required></textarea>
             <!-- Call the Send() function directly from the HTML button -->
-            <button class="normal" type="button" value="button" onclick="Send()">Submit</button>
+            <button class="normal" type="submit" value="button" style="margin-top: 20px;">Submit</button>
+            <span id="msg" style="font-weight: bold; display: block;" style="margin-top: -30px;"></span>
         </form>
         <div class="people">
             <div>
                 <img src="img/5 (2).jpg" alt="">
-                <p><span> Shreyash</span> Co-Founder <br> Phone: +91 98765 96650 <br> Email: contact@gmail.com</p>
+                <p><span> Shreyash</span>Founder <br> Phone: +91 98765 96650 <br> Email: shreyasbhagat108@gmail.com</p>
             </div>
             <!-- <div >
                     <img src="img/5 (2).jpg" alt="">
@@ -226,9 +227,30 @@
     </section>
 
 
-   
+
 
     <script src="script.js">   </script>
+
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzoAP7g7OAXpLjQGDdQeS-Z6ewtNZX3W3SaTnhUvV1bB0Yr7vZZaa7cqoHMJnXRYax8/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg");
+       
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message Sent Successfully";
+                    setTimeout(function () {
+                        msg.innerHTML = "";
+                    }, 5000);
+                    form.reset();
+                })
+                .catch(error => console.error('Error!', error.message));
+        });
+    </script>
+
     <!-- <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
@@ -254,7 +276,7 @@
             message => alert(message)
         );
     } -->
-</script>
+    <!-- </script> -->
 
 </body>
 
