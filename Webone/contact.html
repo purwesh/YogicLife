@@ -85,6 +85,7 @@
             <h2>We Love to hear from you</h2>
             <input type="text" name="Name" id="Name" placeholder="Your Name" required>
             <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
+            <input type="number" name="number" id="number" placeholder="Your Number" required>
             <input type="text" name="subject" id="Subject" placeholder="Subject" required>
             <textarea name="test" id="Message" cols="30" rows="10" placeholder="Your MESSAGE" required></textarea>
             <!-- Call the Send() function directly from the HTML button -->
@@ -115,7 +116,7 @@
         <div class="form">
             <form action="/your-action-url" method="POST" onsubmit="return validateForm(event)">
                 <input type="email" id="email" placeholder="Your Email Address" required>
-                <button type="button" class="normal">Sign Up</button>
+                <button type="button" class="normal" style="margin-top: 20px;">Sign Up</button>
             </form>
         </div>
     </section>

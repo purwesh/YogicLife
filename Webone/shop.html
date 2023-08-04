@@ -9,7 +9,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/5b80a0f80e.js" crossorigin="anonymous"></script>
-    <title>The Team of Yogic Life</title>
+    <title>Offline Preferences Map</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        /* Flex container for the map divs */
+        .maps-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* Map div styling */
+        .map {
+            height: 300px;
+            width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
         <section id="header">
@@ -35,28 +55,27 @@
             </div>
         </section>
 
-        <div>
+        <!-- <div>
             <form action="/search" method="GET" style="text-align: center;">
               <input type="text" name="query" placeholder="Search..." style="width: 343px; height: 44px; border-radius: 34px; margin-top: 20px; padding-right: 40px;" />
               <input type="hidden" name="include_honey" value="true" />
                 <i class="fa fa-search" style="font-size: 18px; margin-right: 12px;"></i>
               </button>
             </form>
-          </div>
+          </div> -->
           
 
         <section id="page-header">
             
             <h1 style="color: black;">Yogic Life <br>
                 </h1><br>
-                <h3>Hurry Up.... Offres Ending Soon...</h3>
             <p style="color: black;">Save More with coupons & Up to 70% off</p>
            
         </section>
    
-        <section id="product1" class="section-p1">
+        <!-- <section id="product1" class="section-p1"> -->
            
-            <div class="pro-container">
+            <!-- <div class="pro-container">
                 <div class="pro" style="background: #cad3dc;" onclick="window.location.href='oproduct.html';">
                     <a href="oproduct.html"> <img src="IMG3/oragnic.jpg"  alt=""></a>
                     <div class="des">
@@ -120,7 +139,7 @@
                         <h4>Rs. 321/- </h4>
                         <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
                     </div>
-                </div>
+                </div> -->
                 <!-- <div class="pro">
                     <img src="img/bottel1.png" alt="">
                     <div class="des">
@@ -185,23 +204,21 @@
                         <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
                     </div>
                 </div> -->
-             </div>
-         </section>
+             <!-- </div>
+         </section> -->
+         <div class="row" style="margin-bottom: 50px; text-align: center;">
+            <h2>Our Offline Preferences</h2>
 
 
-         <div class="title-text">
-            
-            <h1>Our Offline Prefrences</h1>
-            <p>1.	Amravati 
-                2.	Nashik
-                3.	Nagpur<br>
-                4.	Pune 
-                5.	Mumbai 
-                6.	Wardha 
-                7.	Akola
-                </p>
+         </div>
 
-       </div>
+<div class="maps-container">
+    <div class="map" id="map1"></div>
+    <div class="map" id="map2"></div>
+    <div class="map" id="map3"></div>
+    <div class="map" id="map4"></div>
+    <div class="map" id="map5"></div>
+</div>
 
          <!-- buttons for next page as 1 2 -->
 
@@ -224,7 +241,7 @@
     <div class="form">
         <form action="/your-action-url" method="POST" onsubmit="return validateForm(event)">
           <input type="email" id="email" placeholder="Your Email Address" required>
-          <button type="submit" class="normal">Sign Up</button>
+          <button type="submit" class="normal" style="margin-top: 20px;">Sign Up</button>
         </form>
       </div>
 </section>
@@ -330,6 +347,24 @@
          </div>
           </section>
     <script src="script.js">   </script>
+
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Function to initialize and display a map for a location
+        function displayMap(mapId, lat, lng) {
+            var map = L.map(mapId).setView([lat, lng], 10);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+            var marker = L.marker([lat, lng]).addTo(map);
+        }
+
+        // Call the function to display maps for each location
+        displayMap('map1', 20.9331, 77.7519); // Amravati
+        displayMap('map2', 19.9975, 73.7898); // Nashik
+        displayMap('map3', 21.1458, 79.0882); // Nagpur
+        displayMap('map4', 20.7453, 78.6022); // Wardha
+        displayMap('map5', 20.7096, 77.0463); // Akola
+    </script>
 
 
     
