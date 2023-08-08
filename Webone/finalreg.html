@@ -15,59 +15,87 @@
     <style>
         <style>
 
-        /* Style for new-container */
-        .new-container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+        /* Common styles for new-container */
+.new-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        /* Style for cart-details */
-        .cart-details {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 20px;
-        }
+/* Styles for cart-details */
+.cart-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
 
-        /* Style for the table */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 15px;
-        }
+/* Styles for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
 
-        /* Style for table cells (td) */
-        td {
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-        }
+/* Styles for table cells (td) */
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
 
-        /* Style for the header (h3) */
-        h3 {
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
+/* Styles for the header (h3) */
+h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
 
-        /* Style for the product-details */
-        .product-details {
-            margin-top: 20px;
-            width: 100%;
-        }
+/* Styles for the product-details */
+.product-details {
+    margin-top: 20px;
+    width: 100%;
+}
 
-        /* Style for the strong elements inside product-details */
-        .product-details strong {
-            width: 150px;
-            display: inline-block;
-        }
+/* Styles for the strong elements inside product-details */
+.product-details strong {
+    width: 150px;
+    display: inline-block;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    /* Adjust font size and padding for better mobile display */
+    td, h3 {
+        font-size: 16px;
+        padding: 5px;
+    }
+    
+    /* Modify the layout for better mobile display */
+    .new-container {
+        padding: 10px;
+    }
+
+    /* Center align the gender details */
+    .new-gender__details {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    /* Reduce the gap between elements */
+    .new-gender__details > *, .new-user__details > * {
+        margin-bottom: 10px;
+    }
+}
+
     </style>
 
     </style>
@@ -93,7 +121,7 @@
             <i id="bar" class="fa fa-outdent"></i>
         </div>
     </section>
-
+<div style="display: flex; gap: 50px; padding: 5%;">
     <div class="new-container">
         <div class="cart-details">
             <div id="subtotal">
@@ -194,6 +222,7 @@
         </div>
 
     </div>
+</div>
 
 
 
